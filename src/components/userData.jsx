@@ -26,7 +26,7 @@ class UserData extends Component {
 
     }
     render() {
-        if (this.props.user.editing) { 
+        if (this.props.isEditing) { 
             return <UserForm user = {this.props.user} />
         }
         else {

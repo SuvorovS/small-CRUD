@@ -16,7 +16,7 @@ function usersPanel (props) {
                         </div>
                         <div id={`collapse${item.id}`} className="panel-collapse collapse" role="tabpanel" aria-labelledby={`heading${item.id}`}>
                             <div className="panel-body">
-                                <UserData key={item.id} user={item} />
+                                <UserData key={item.id} user={item} isEditing={item.editing}/> 
                             </div>
                         </div>
                     </div>
