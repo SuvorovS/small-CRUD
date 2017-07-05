@@ -29,7 +29,7 @@ class App extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12">
-                            <UsersPanel users={this.props.users} />
+                            <UsersPanel />
                         </div>
                     </div>
                     <AddNewUserModal />
@@ -44,7 +44,7 @@ class App extends Component {
 export default connect(
   state => ({
     isLoading: state.user.isLoading,
-    users : state.user.userData,
+    // users : state.user.userData,
   }),
   dispatch => ({
     resiveData : (event) => {
