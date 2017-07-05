@@ -49,7 +49,22 @@ export default function user (state = initialState, action) {
                 return item;
             }
         });
+        return newState;
+    }
+
+    else if(action.type === 'RESET_USER_FORM'){
+        let newState = Object.assign({}, state);
+        console.log(typeof action.payload, action.payload);
         
+        newState.userData = newState.userData.map(item =>{
+            if (item.id === action.payload) {
+                item.editing = false;
+                return item;
+            } 
+            else {
+                return item;
+            }
+        });
         return newState;
     }
 

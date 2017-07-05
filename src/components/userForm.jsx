@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import axios from 'axios';
-import { userFormSaveHandler } from '../actions/crud';
+import { userFormSaveHandler, resetUserFormHandler } from '../actions/crud';
 
 import DateField from './dataPicker';
 
@@ -11,7 +11,6 @@ import './userForm.scss';
 class UserForm extends Component {
     componentDidMount(){
         console.log('componentDidMount', this.props);
-        
         $( function() {
             $( ".datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
         } );
@@ -19,13 +18,12 @@ class UserForm extends Component {
 
     componentWillUpdate(){
         console.log('componentWillUpdate', this.props);
-        
     }
-
+    
     render(){
 
         return (
-            <form className="userForm" onSubmit={this.props.sabmitUserFormHandler} id={this.props.user.id } >
+            <form className="userForm" onReset={this.props.resetUserFormHandler} onSubmit={this.props.sabmitUserFormHandler} id={this.props.user.id } >
                 <div className="well">
                     <div className="input-group">
                         <span className="input-group-addon">first_name</span>
@@ -145,6 +143,9 @@ export default connect(
   dispatch => ({
     sabmitUserFormHandler : (e) => {
         dispatch(userFormSaveHandler(e));
+    },
+    resetUserFormHandler : (e)=>{
+        dispatch(resetUserFormHandler(e))
     }
 })
 
@@ -153,15 +154,15 @@ export default connect(
 
 
 
-UserForm.defaultProps = { // props по умолчанию, на случай если не передан извне
-  user: {
-    id : '',
-    first_name : '',
-    last_name : '',
-    birthdate : '',
-    // description : '',
-   
-},
+UserForm.defaultProps = { // props по умолчанию, на случай если user не передан извне
+    user: {
+        id : '',
+        first_name : '',
+        last_name : '',
+        birthdate : '',
+        // description : '',
+    
+    },
 };
 
 

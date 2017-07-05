@@ -91,6 +91,12 @@ export function userChangeHandler(e){
     return {type : 'CHANGE_USER', payload : e.target.id}
 }
 
+export function resetUserFormHandler(e){
+    let user_id = e.target.id;
+    // console.log(user_id);
+    return {type: 'RESET_USER_FORM', payload : user_id}
+    }
+
 function showLoader(){
     return {'type' : 'SHOW_LOADER'}
 }
