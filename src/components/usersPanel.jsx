@@ -4,7 +4,7 @@ import UserData from './userData';
 
 function UsersPanel (props) {
     return (
-// <<<<<<< HEAD
+
         <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             {props.users.map((item)=>{
                 return (
@@ -29,17 +29,7 @@ function UsersPanel (props) {
                                 <UserData key={item.id} user={item} isEditing={item.editing}/> 
                             </div>
                         </div>
-=======
-        <div className="well">
-            {props.users.map((item, index)=>{
-                return (
-                    <div key={item.id}>
-                        <h3>
-                            {`Пользователь ${item.first_name} ${item.last_name}`}
-                        </h3>
-                        {/*<UserData key={item.id} user={item} />*/}
-                        <UserData  user={item} isEditing={item.editing}/>
->>>>>>> dev
+
                     </div>
                 )
             })}
