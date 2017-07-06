@@ -7,23 +7,8 @@ import UserForm from './userForm';
 import './userData.scss';
 
 class UserData extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //         eating : false
-    //     }
-    // }
-
     test(e){
         this.props.userChangeHandler(e);
-
-
-
-
-        // this.setState({
-        //     eating : true,
-        // })
-
     }
     render() {
         if (this.props.isEditing) { 
