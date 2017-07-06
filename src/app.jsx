@@ -5,7 +5,7 @@ import * as CRUD  from './actions/crud';
 
 import PreloaderPanel from './components/preloaderPanel';
 import UsersPanel from './components/usersPanel';
-import Test from './components/test';
+
 import AddNewUserModal from './components/addNewUserModal';
 
 import './app.scss';
@@ -26,7 +26,7 @@ class App extends Component {
                     <div className="row">
                         <div className="col-sm-12">
                             <UsersPanel />
-                    {/*<Test />*/}
+                 
                         </div>
                     </div>
                     <AddNewUserModal />
