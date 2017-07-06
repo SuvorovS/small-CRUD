@@ -5,6 +5,7 @@ import axios from 'axios';
 import { userFormSaveHandler, resetUserFormHandler } from '../actions/crud';
 
 import DateField from './dataPicker';
+import Checkbox from './checkbox';
 
 import './userForm.scss';
 
@@ -79,47 +80,66 @@ class UserForm extends Component {
                     <br/>
                     
                     <div className="input-group">
-                        <span className="input-group-addon">
+                        {/*<span className="input-group-addon">*/}
                         
+                                {this.props.user.quantityTypes.map((item, i)=>{
+                                    return (
+                                        <div key={i}>
+                                            <Checkbox name="quantity" checked={item.checked} value={item.label} />
+                                            
+                                        </div>
+                                        )
+                                })}
+
+
+
                             <div className="btn-group">
-                            <button type="button" className="btn btn-primary">quantity</button>
-                            <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span className="caret"></span>
-                                <span className="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <ul className="dropdown-menu">
-                                <li>
-                                    <span className="input-group-addon">
-                                        <label className="btn btn-danger">1
-                                            <input name="quantity" type="checkbox" value="1"/>
-                                        </label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="input-group-addon">
-                                        <label className="btn btn-danger">2
-                                            <input name="quantity" type="checkbox" value="2"/>
-                                        </label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="input-group-addon">
-                                        <label className="btn btn-danger">2+1
-                                            <input name="quantity" type="checkbox" value="2+1" />
-                                        </label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="input-group-addon">
-                                        <label className="btn btn-danger">3+2
-                                            <input name="quantity" type="checkbox" value="3+2"/>
-                                        </label>
-                                    </span>
-                                </li>
-                                
-                            </ul>
+
+                                        
+
+
+
+
+
+
+                                                        {/*<button type="button" className="btn btn-primary">quantity</button>
+                                                        <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <span className="caret"></span>
+                                                            <span className="sr-only">Toggle Dropdown</span>
+                                                        </button>
+                                                        <ul className="dropdown-menu">
+                                                            <li>
+                                                                <span className="input-group-addon">
+                                                                    <label className="btn btn-danger">1
+                                                                        <input name="quantity" type="checkbox" value="1"/>
+                                                                    </label>
+                                                                </span>
+                                                            </li>
+                                                            <li>
+                                                                <span className="input-group-addon">
+                                                                    <label className="btn btn-danger">2
+                                                                        <input name="quantity" type="checkbox" value="2"/>
+                                                                    </label>
+                                                                </span>
+                                                            </li>
+                                                            <li>
+                                                                <span className="input-group-addon">
+                                                                    <label className="btn btn-danger">2+1
+                                                                        <input name="quantity" type="checkbox" value="2+1" />
+                                                                    </label>
+                                                                </span>
+                                                            </li>
+                                                            <li>
+                                                                <span className="input-group-addon">
+                                                                    <label className="btn btn-danger">3+2
+                                                                        <input name="quantity" type="checkbox" value="3+2"/>
+                                                                    </label>
+                                                                </span>
+                                                            </li>
+                                                            
+                                                        </ul>*/}
                             </div>
-                        </span>
+                        {/*</span>*/}
                     
                     </div>
                     <div className="input-group modal-footer">
@@ -138,6 +158,7 @@ class UserForm extends Component {
 export default connect(
     state => ({
         isLoading: state.user.isLoading,
+        quantityTypes: state.user.quantityTypes,
         
     }),
   dispatch => ({
@@ -161,9 +182,15 @@ UserForm.defaultProps = { // props по умолчанию, на случай е
         last_name : '',
         birthdate : '',
         // description : '',
+<<<<<<< HEAD
     
+=======
+        quantityTypes : []
+>>>>>>> dev
     },
 };
+
+
 
 
 

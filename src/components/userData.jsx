@@ -6,25 +6,11 @@ import UserForm from './userForm';
 
 import './userData.scss';
 
-class UserData extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //         eating : false
-    //     }
-    // }
-
-    test(e){
-        this.props.userChangeHandler(e);
-
-
-
-
-        // this.setState({
-        //     eating : true,
-        // })
-
+function UserData(props) {
+    if (props.isEditing) { 
+        return <UserForm user = {props.user} />
     }
+<<<<<<< HEAD
     render() {
         if (this.props.isEditing) { 
             return <UserForm user = {this.props.user} />
@@ -51,12 +37,32 @@ class UserData extends Component {
                         <button id={this.props.user.id} onClick={this.test.bind(this)} type="button" className="btn btn-primary">change</button>
                         <button id={this.props.user.id} onClick={this.props.deleteUserHandler.bind(this)} type="button" className="btn btn-danger">delete</button>
                     </div>
+=======
+    else {
+        return (
+            <div>
+                <div className="well">
+                    <p> <span className="alert alert-info">Имя: </span> {props.user.first_name} </p>
+                    <p> <span className="alert alert-info">Фамилия: </span> {props.user.last_name} </p>
+                    <p> <span className="alert alert-info">Дата рождения: </span> {props.user.birthdate} </p>
+                    <p> <span className="alert alert-info">Описание: </span> {props.user.description} </p>
+                    <p> <span className="alert alert-info">статус: </span> {props.user.status} </p>
+                    <p> <span className="alert alert-info">язык: </span> {props.user.lang} </p>
+                    <p> <span className="alert alert-info">выбраны количества: </span>
+                        {props.user.quantity.map(item=>{ 
+                            return <li key={item.id} > {item.label}</li>
+                        })}
+                    </p>
+>>>>>>> dev
                 </div>
-            );
-        }
+                <div className="btn-group" role="group">
+                    <button id={props.user.id} onClick={props.userChangeHandler} type="button" className="btn btn-primary">change</button>
+                    <button id={props.user.id} onClick={props.deleteUserHandler} type="button" className="btn btn-danger">delete</button>
+                </div>
+            </div>
+        );
     }
 }
-
 
 export default //UserData;
 
