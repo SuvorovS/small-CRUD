@@ -9,9 +9,13 @@ import DateField from './dataPicker';
 import './userForm.scss';
 
 class UserForm extends Component {
+    // constructor(props){
+    //     super(props);
+    //     this.state = {
+    //         checked : false,
+    //     }
+    // }
     componentDidMount(){
-        console.log('componentDidMount', this.props);
-        
         $( function() {
             $( ".datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
         } );
@@ -19,7 +23,6 @@ class UserForm extends Component {
 
     componentWillUpdate(){
         console.log('componentWillUpdate', this.props);
-        
     }
 
     render(){

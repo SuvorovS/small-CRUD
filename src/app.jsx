@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import * as CRUD  from './actions/crud';
-// import axios from 'axios';
+
 
 import PreloaderPanel from './components/preloaderPanel';
 import UsersPanel from './components/usersPanel';
-// import UserForm from './components/userForm';
-// import UserData from './components/userData';
+import Test from './components/test';
 import AddNewUserModal from './components/addNewUserModal';
 
 import './app.scss';
@@ -16,9 +15,6 @@ class App extends Component {
     componentWillMount(){
         this.props.resiveData()
     }
-  
-
-
 
     render (){
         if (this.props.isLoading) {
@@ -30,6 +26,7 @@ class App extends Component {
                     <div className="row">
                         <div className="col-sm-12">
                             <UsersPanel />
+                    {/*<Test />*/}
                         </div>
                     </div>
                     <AddNewUserModal />
