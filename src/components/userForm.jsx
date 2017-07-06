@@ -182,11 +182,8 @@ UserForm.defaultProps = { // props по умолчанию, на случай е
         last_name : '',
         birthdate : '',
         // description : '',
-<<<<<<< HEAD
-    
-=======
         quantityTypes : []
->>>>>>> dev
+
     },
 };
 

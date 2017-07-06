@@ -4,7 +4,7 @@ import UserData from './userData';
 
 function UsersPanel (props) {
     return (
-<<<<<<< HEAD
+// <<<<<<< HEAD
         <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             {props.users.map((item)=>{
                 return (
