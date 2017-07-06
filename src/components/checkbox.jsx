@@ -17,9 +17,9 @@ class Checkbox extends Component {
         return (
             <label>
                 {this.state.checked ?
-                    <i className="fa fa-3x fa-check-square-o" aria-hidden="true"></i>
+                    <i className="fa fa-2x fa-check-square-o" aria-hidden="true"></i>
                 :
-                    <i className="fa fa-3x fa-square-o" aria-hidden="true"></i>
+                    <i className="fa fa-2x fa-square-o" aria-hidden="true"></i>
                 }
                 {this.props.value} | <input onChange={this.CheckboxHandler.bind(this)} name={this.props.name} type="checkbox" checked={this.state.checked} value={this.props.value} />
             </label>
