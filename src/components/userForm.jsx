@@ -11,14 +11,13 @@ import './userForm.scss';
 
 class UserForm extends Component {
     componentDidMount(){
-        console.log('componentDidMount', this.props);
         $( function() {
             $( ".datepicker" ).datepicker({dateFormat: "yy-mm-dd"});
         } );
     }
 
     componentWillUpdate(){
-        console.log('componentWillUpdate', this.props);
+        
     }
     
     render(){

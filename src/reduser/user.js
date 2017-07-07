@@ -9,10 +9,13 @@ export default function user (state = initialState, action) {
     }
     ///////
     else if(action.type === 'GET_DATA'){
+        console.log('с сервера', action.payload);
         
         let users = action.payload.users;
         let quantity = action.payload.quantity;
         let quantityTypes = action.payload.quantityTypes;
+        let langTypes = action.payload.langTypes;
+        let statusTypes = action.payload.statusTypes;
         
         
         users = users.map((user)=>{
