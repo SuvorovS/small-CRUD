@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
 
 import user from './user'; 
+import pagination from './pagination'; 
 
 
 
@@ -8,6 +9,7 @@ import user from './user';
 
 const reducer = combineReducers({
     user,
+    pagination
 })
 
 export default reducer;
