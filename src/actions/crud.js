@@ -1,10 +1,14 @@
 import axios from 'axios';
+import { API_url } from '../config/config';
+
+console.log(API_url);
+
 
 //thunk: получение с сервера данных о всех пользователях
 export const resiveData = ()=> {
     return dispatch => {
     dispatch ( showLoader() ); // отобразить прелодер
-    axios.post('/api', {type : 'getData'})
+    axios.post(API_url, {type : 'getData'})
         .then((res) => {
             // console.log('ответ с сервера:', res.data);
             
@@ -26,7 +30,7 @@ export function deleteUserHandler(e){
     return dispatch => {
         let id = +e.target.id;
         console.log('user_id: ', id, typeof (id));
-        axios.post('/api', {type : 'deleteUser', data : id})
+        axios.post(API_url, {type : 'deleteUser', data : id})
         .then( (res)=> {
             console.log(res.data);
             if (res.data === 'correct') {
@@ -70,7 +74,7 @@ export function userFormSaveHandler(e) {
             console.log('передаю на сервер:', params);
 
 
-            axios.post('/api', {data : params, type: 'createUser', id : id})
+            axios.post(API_url, {data : params, type: 'createUser', id : id})
                 .then(res=>{
                     console.log('ответ c сервера', res.data);
                     if (res.data === 'correct') {
